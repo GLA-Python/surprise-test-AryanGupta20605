@@ -1,0 +1,26 @@
+def check(lst):
+    a = []
+    b = []
+    c = []
+    d = []
+    e = []
+    for i in range(len(lst)-1):
+        a.append(lst[i])
+    for i in range(1, len(lst)):
+        b.append(lst[i])
+    for i in range(len(a)):
+        diff = b[i] - a[i]
+        c.append(diff**2)
+    for i in range(len(c)-1):
+        d.append(c[i])
+    
+    for i in range(1, len(c)):
+        e.append(c[i])
+
+    for i in range(len(d)):
+        if e[i]<=d[i]:
+            return False
+    return True
+
+n = list(map(int, input().split()))
+print(check(n))
